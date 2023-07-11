@@ -1,6 +1,7 @@
 /libmkshift.a
 /libmkshift.la
 /.libs
+*.o
 
 # Emacs temporary files
 *~

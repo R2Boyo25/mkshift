@@ -10,10 +10,6 @@
 #include <cairo-xlib.h>
 #include <inttypes.h>
 
-/// @brief A temporary function to setup layout.
-/// Will be renamed and stuff later.
-void layoutTest();
-
 /// A RGBA color container.
 struct Color {
   uint8_t

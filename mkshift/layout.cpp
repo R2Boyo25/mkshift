@@ -111,34 +111,3 @@ void Box::draw(cairo_t *cr) {
   printf("RoundedRect: ");
   this->drawChildren(cr);
 }
-
-void layoutTest() {
-  auto root_node = YGNodeNew();
-  YGNodeStyleSetWidthPercent(root_node, 100.0);
-  YGNodeStyleSetHeightPercent(root_node, 100.0);
-  //YGNodeStyleSetAlignItems(root_node, YGAlign::YGAlignCenter);
-  YGNodeStyleSetDisplay(root_node, YGDisplay::YGDisplayFlex);
-  YGNodeStyleSetJustifyContent(root_node, YGJustify::YGJustifyCenter);
-  YGNodeStyleSetGap(root_node, YGGutter::YGGutterColumn, taskbar_gap);
-  YGNodeStyleSetFlexDirection(root_node, YGFlexDirection::YGFlexDirectionRow);
-
-  root_element.ygnode = root_node;
-  
-  auto taskbar_node = YGNodeNew();
-  YGNodeStyleSetWidth(taskbar_node, 300 * scaling_ratio);
-  YGNodeStyleSetHeightPercent(taskbar_node, 100.0);
-  
-  Box *taskbar_element = new Box(15 * scaling_ratio);
-  taskbar_element->ygnode = taskbar_node;
-  root_element.addChild(taskbar_element);
-  
-  Box *taskbar_element_2 = new Box(15 * scaling_ratio);
-  taskbar_element_2->ygnode = YGNodeClone(taskbar_node);
-  root_element.addChild(taskbar_element_2);
-
-  Box *taskbar_element_3 = new Box(15 * scaling_ratio);
-  taskbar_element_3->ygnode = YGNodeClone(taskbar_node);
-  root_element.addChild(taskbar_element_3);
-  
-  root_element.recalc(taskbar_width, taskbar_height);
-}
