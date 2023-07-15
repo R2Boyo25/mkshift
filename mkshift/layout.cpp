@@ -1,11 +1,5 @@
 #include "layout.hpp"
 
-extern int taskbar_height;
-extern int taskbar_width;
-extern int taskbar_gap;
-extern double scaling_ratio;
-extern Element root_element;
-
 Element::Element() {
   this->ygnode = YGNodeNew();
 }

@@ -1,1 +1,2 @@
 INCLUDEYOGA := -I%reldir%/yoga
+LINKYOGA    := 
